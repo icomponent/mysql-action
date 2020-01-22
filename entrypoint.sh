@@ -29,12 +29,6 @@ sh -c "$script"
 
 # run init scripts
 if [ -n "$INPUT_INIT_SCRIPTS" ]; then
-    # enter mysql container bash
-    sh -c "docker exec -it mysql bash"
 
-    # login mysql in docker container
-    sh -c "mysql -u root -p $INPUT_ROOT_PASSWORD"
-
-    # run init scripts
-    sh -c "$INPUT_INIT_SCRIPTS"
+    docker exec -it mysql bash -c "$INPUT_INIT_SCRIPTS"
 fi
