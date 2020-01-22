@@ -24,19 +24,7 @@ inputs:
   ROOT_PASSWORD:
     description: 'super user root password'
     required: false
-    default: ''
-  INIT_DATABASE:
-    description: 'the default database'
-    required: false
-    default: ''
-  INIT_USER:
-    description: 'the spec user for default database'
-    required: false
-    default: ''
-  INIT_PASSWORD:
-    description: 'the spec password for default database'
-    required: false
-    default: ''
+    default: 'root'
 runs:
   using: 'docker'
   image: 'Dockerfile'
