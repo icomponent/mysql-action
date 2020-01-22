@@ -26,9 +26,3 @@ echo "$script"
 
 # run docker script
 sh -c "$script"
-
-# run init scripts
-if [ -n "$INPUT_INIT_SCRIPTS" ]; then
-
-    docker exec -it mysql bash -c "$INPUT_INIT_SCRIPTS"
-fi
