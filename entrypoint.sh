@@ -1,9 +1,9 @@
 #!/bin/sh -l
 
-script = "docker run"
+docker_run = "docker run"
 
-script = "$script --name $CONTAINER_NAME"
+docker_run = "$docker_run --name $CONTAINER_NAME"
 
-script = "$script -p $PORT_MAPPING"
+docker_run = "$docker_run -p $PORT_MAPPING"
 
-echo script
+echo "$docker_run"
