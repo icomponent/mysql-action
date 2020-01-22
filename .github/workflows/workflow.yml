@@ -19,5 +19,7 @@ jobs:
       - name: Install mysql 5.7
         uses: icomponent/mysql-action@master
         with:
+          VERSION: 5.7
           CONTAINER_NAME: mysql
           PORT_MAPPING: 3309:3306
+          ROOT_PASSWORD: root
