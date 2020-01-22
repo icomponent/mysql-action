@@ -1,0 +1,42 @@
+name: 'MySQL Action'
+description: 'Install MySQL With Custom Configuration'
+inputs:
+  CONTAINER_NAME:
+    description: 'the name of mysql container'
+    required: false
+    default: 'mysql'
+  PORT_MAPPING:
+    description: 'the port mapping of mysql container'
+    required: false
+    default: '3306:3306'
+  CHARACTER_SET:
+    description: 'the character set of mysql server'
+    required: false
+    default: 'utf8mb4'
+  COLLATION:
+    description: 'the character collation of mysql server'
+    required: false
+    default: 'utf8mb4_general_ci'
+  VERSION:
+    description: 'the version of mysql server'
+    required: false
+    default: 'latest'
+  ROOT_PASSWORD:
+    description: 'super user root password'
+    required: false
+    default: ''
+  INIT_DATABASE:
+    description: 'the default database'
+    required: false
+    default: ''
+  INIT_USER:
+    description: 'the spec user for default database'
+    required: false
+    default: ''
+  INIT_PASSWORD:
+    description: 'the spec password for default database'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
