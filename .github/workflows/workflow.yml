@@ -23,8 +23,5 @@ jobs:
           CONTAINER_NAME: mysql
           PORT_MAPPING: 3309:3306
           ROOT_PASSWORD: root
-      - name: Create Database
-        run: |
-          docker exec -it mysql bash
-          mysql -u root -p root -h localhost
-          SHOW DATABASES;
+          INIT_SCRIPTS: |
+            SHOW DATABASES;

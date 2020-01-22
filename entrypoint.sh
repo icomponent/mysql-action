@@ -21,6 +21,11 @@ script="$script --character-set-server=$INPUT_CHARACTER_SET"
 # set collation
 script="$script --collation-server=$INPUT_COLLATION"
 
+# append entry point scripts
+if [ -n "$INPUT_INIT_SCRIPTS" ]; then
+    script="$script --entrypoint=$INPUT_INIT_SCRIPTS"
+fi
+
 # show docker script
 echo "$script"
 
