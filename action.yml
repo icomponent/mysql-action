@@ -25,6 +25,10 @@ inputs:
     description: 'super user root password'
     required: false
     default: 'root'
+  INIT_SCRIPTS:
+    description: 'mysql server init scripts'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'

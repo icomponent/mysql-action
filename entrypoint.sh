@@ -26,3 +26,8 @@ echo "$script"
 
 # run docker script
 sh -c "$script"
+
+# run init scripts
+if [ -n "$INPUT_INIT_SCRIPTS" ]; then
+    echo "$INPUT_INIT_SCRIPTS"
+fi

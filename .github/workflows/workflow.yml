@@ -23,3 +23,7 @@ jobs:
           CONTAINER_NAME: mysql
           PORT_MAPPING: 3309:3306
           ROOT_PASSWORD: root
+          INIT_SCRIPTS: |
+            CREATE DATABASE auth default charset utf8mb4 COLLATE utf8mb4_general_ci;
+            CREATE DATABASE app default charset utf8mb4 COLLATE utf8mb4_general_ci;
+            SHOW DATABASES;
