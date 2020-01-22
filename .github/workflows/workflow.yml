@@ -23,5 +23,4 @@ jobs:
           CONTAINER_NAME: mysql
           PORT_MAPPING: 3309:3306
           ROOT_PASSWORD: root
-          INIT_SCRIPTS: |
-            SHOW DATABASES;
+          DATABASE: auth

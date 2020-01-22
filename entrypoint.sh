@@ -12,6 +12,9 @@ script="$script -p $INPUT_PORT_MAPPING"
 # add docker container mysql server root password
 script="$script -e MYSQL_ROOT_PASSWORD=$INPUT_ROOT_PASSWORD"
 
+# set mysql init database
+script="$script -e MYSQL_DATABASE=$INPUT_DATABASE"
+
 # set mysql version
 script="$script -d mysql:$INPUT_VERSION"
 
@@ -20,11 +23,6 @@ script="$script --character-set-server=$INPUT_CHARACTER_SET"
 
 # set collation
 script="$script --collation-server=$INPUT_COLLATION"
-
-# append entry point scripts
-if [ -n "$INPUT_INIT_SCRIPTS" ]; then
-    script="$script --entrypoint='$INPUT_INIT_SCRIPTS'"
-fi
 
 # show docker script
 echo "$script"
