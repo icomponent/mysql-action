@@ -10,16 +10,16 @@ script="$script --name $INPUT_CONTAINER_NAME"
 script="$script -p $INPUT_PORT_MAPPING"
 
 # add docker container mysql server root password
-script="$script -e $INPUT_MYSQL_ROOT_PASSWORD"
+script="$script -e MYSQL_ROOT_PASSWORD=$INPUT_ROOT_PASSWORD"
+
+# set mysql version
+script="$script -d mysql:$INPUT_VERSION"
 
 # set character set
 script="$script --character-set-server=$INPUT_CHARACTER_SET"
 
 # set collation
 script="$script --collation-server=$INPUT_COLLATION"
-
-# set mysql version
-script="$script -d mysql:$INPUT_VERSION"
 
 # show docker script
 echo "$script"
